@@ -33,7 +33,7 @@ export const Login = () => {
 
 
     return (
-        <Box sx={{ minWidth: 275 }}>
+        <Box sx={{ minWidth: 275, marginTop: 25 }}>
             <Card variant="outlined"><CardContent>
                 <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 23 }}>
                     Iniciar sesión

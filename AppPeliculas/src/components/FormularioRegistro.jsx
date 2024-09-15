@@ -77,7 +77,7 @@ export const FormularioRegistro = () => {
     );
 
     return (
-        <Box sx={{ minWidth: 275 }}>
+        <Box sx={{ minWidth: 275, mt:15 }}>
             <Card variant="outlined">{cardContent}</Card>
         </Box>
     );

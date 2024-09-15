@@ -28,7 +28,7 @@ const PeliculasPopulares = () => {
 
   return (
     <div className='titulo-estado'>
-      <h1>Películas populares</h1>
+      <h1 style={{color: 'white', textShadow: '0 0 10px black'}}>Películas populares</h1>
       {/* Contenedor para las tarjetas de películas */}
       <Container className='peliculas-container' maxWidth={false} sx={{ display: 'flex', justifyContent: 'center' }}>
         <Box
@@ -71,7 +71,8 @@ const PeliculasPopulares = () => {
             },
             '& .Mui-selected': {
               backgroundColor: 'white', // Cambia el fondo del elemento seleccionado a blanco
-              color: 'black', // Cambia el color del texto del elemento seleccionado a negro
+              color: 'black',
+              textShadow: '0 0 3px black', // Cambia el color del texto del elemento seleccionado a negro
             },
           }}
         />
