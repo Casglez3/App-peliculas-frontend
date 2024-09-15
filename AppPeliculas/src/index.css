@@ -29,7 +29,7 @@ body {
   display: flex;
   flex-direction: column; /* Asegura que el contenido se apile verticalmente */
   align-items: stretch; /* Permite que el contenido ocupe todo el ancho */
-  background-image: url('./src/imagen/fondo.webp'); /* Asegúrate de usar la ruta correcta */
+  background-image: url('../src/assets/fondo.webp'); /* Asegúrate de usar la ruta correcta */
   background-size: cover; /* Asegura que la imagen cubra todo el fondo */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
