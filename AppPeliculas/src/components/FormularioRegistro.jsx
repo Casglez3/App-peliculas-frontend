@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Box, Card, CardContent, CardActions, Button, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardActions, Button, Typography, Container } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { registrarUsuario } from '../api-calls/appPeliculas';
 
@@ -11,13 +11,17 @@ export const FormularioRegistro = () => {
     const [nick, setNick] = useState('');
     const [email, setEmail] = useState('');
     const [contrasena, setContrasena] = useState('');
+    const [mensaje, setMensaje] = useState('');
 
     const manejarBotonRegistroUsuario = async () => {
         try{
             const respuestaRegistroUsuario = await registrarUsuario(nombre, apellidos, nick, email, contrasena);
             if (respuestaRegistroUsuario && respuestaRegistroUsuario.data) {
+                 // Registro exitoso
+                 setMensaje('¡Usuario registrado con éxito!');
             }
         } catch (error) {
+            setMensaje('Error al intentar registrar el usuario.');
             console.error('Error al intentar registrar usuario:', error);
         }
     };
@@ -25,19 +29,29 @@ export const FormularioRegistro = () => {
     const cardContent = (
         <div className='formulario-registro'>
             <CardContent>
-                <Typography gutterBottom sx={{ color: 'text.primary', fontSize: 23 }}>
-                    Registro de usuario
+            <Typography gutterBottom sx={{ color: 'text.primary', fontSize: { xs: 20, sm: 23 } }}>
+            Registro de usuario
                 </Typography>
+                
+                {/* Muestra el mensaje de éxito o error */}
+                {mensaje && <Alert severity={mensaje.includes('éxito') ? 'success' : 'error'}>{mensaje}</Alert>}
+
                 <Box
-                    component="form"
-                    sx={{ '& .MuiTextField-root': { m: 1, width: '55ch' } }}
+                    ccomponent="form"
+                    sx={{
+                      '& .MuiTextField-root': {
+                        m: 1,
+                        width: { xs: '100%', sm: '45ch', md: '55ch' }, // Ancho responsive
+                      },
+                    }}
                     noValidate
                     autoComplete="off"
-                >
+                  >
                     <div>
                         <TextField required id="nick" label="Nick de usuario" variant="outlined"
                         value={nick}
                         onChange={(e) => setNick(e.target.value)}
+                        fullWidth
                         />
                     </div>
                     <div>
@@ -77,9 +91,9 @@ export const FormularioRegistro = () => {
     );
 
     return (
-        <Box sx={{ minWidth: 275, mt:15 }}>
+        <Container maxWidth="sm" sx={{ mt: 15 }}>
             <Card variant="outlined">{cardContent}</Card>
-        </Box>
+        </Container>
     );
 };
 

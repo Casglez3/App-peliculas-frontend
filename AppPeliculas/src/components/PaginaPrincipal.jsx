@@ -13,18 +13,18 @@ const PaginaPrincipal = () => {
 
 
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{ paddingX: { xs: 2, sm: 3, md: 4 } }}>
             <Box fflex="1"
-                minWidth="300px"
-                mr={2}
+                mr={{ xs: 0, md: 2 }}
                 mb={2}
-                mt={7} // Margen superior
-                p={2} // Padding interno
-                borderRadius={8} // Borde redondeado
+                mt={{ xs: 9, md: 12 }} // Margen superior ajustado para pantallas pequeñas y grandes
+                p={2}
+                borderRadius={8}
                 sx={{
-                    backgroundColor: 'rgba(128, 128, 128, 0.6)', // Color gris con 50% de opacidad
-                    color: 'white', // Color del texto
-                    boxShadow: 3 // Sombra
+                    backgroundColor: 'rgba(128, 128, 128, 0.6)',
+                    color: 'white',
+                    boxShadow: 3,
+                    textAlign: { xs: 'center', md: 'left' },
                 }}
             >
                 <Typography
@@ -33,8 +33,9 @@ const PaginaPrincipal = () => {
                     align="center"
                     gutterBottom
                     sx={{
-                        fontFamily: "'Cinzel', serif", // Cambio de fuente
-                        color: 'white'
+                        fontFamily: "'Cinzel', serif",
+                        color: 'white',
+                        fontSize: { xs: '2rem', md: '3rem' }, // Tamaño del texto responsive
                     }}>
                     FilmFusion
                     <Box mt={2} /> {/* Añadir margen superior */}
