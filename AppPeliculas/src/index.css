@@ -27,12 +27,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   display: flex;
-  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-  align-items: stretch; /* Permite que el contenido ocupe todo el ancho */
+  flex-direction: column;
+  align-items: stretch;
   background-image: url('../src/assets/fondo.webp'); /* Asegúrate de usar la ruta correcta */
   background-size: cover; /* Asegura que la imagen cubra todo el fondo */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen en el fondo cuando se desplaza la página */
 }
 
 h1 {

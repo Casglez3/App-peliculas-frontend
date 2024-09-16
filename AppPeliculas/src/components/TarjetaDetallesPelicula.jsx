@@ -10,7 +10,6 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { obtenerPeliculaPorId, obtenerVideoPelicula, obtenerCreditosPelicula } from '../api-calls/appTheMovieDB';
 import { transformarFecha } from '../utilidades/utiles';
